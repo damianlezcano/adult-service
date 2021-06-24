@@ -1,0 +1,15 @@
+package org.acme;
+unit PersonUnit; 
+
+import org.acme.domain.Person;
+
+rule "Is Adult"
+when
+$p: /persons[age >= adultAge]; 
+then
+$p.setAdult(true); 
+end
+
+query "adult"
+$p: /persons;
+end
